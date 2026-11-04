@@ -1,19 +1,19 @@
 let produite = [
     {
         nome : "table",
-        prix : 200,
+        prix : 20,
         quantite : 3,
     },
     {
         nome : "quasque",
-        prix : 400,
+        prix : 40,
         quantite : 5,
-    },
-    {
-        nome : "casquet",
-        prix : 500,
-        quantite : 9,
     }
+    // {
+    //     nome : "casquet",
+    //     prix : 50,
+    //     quantite : 9,
+    // }
 ]
 
 
