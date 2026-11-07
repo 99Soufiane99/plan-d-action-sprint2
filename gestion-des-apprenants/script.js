@@ -63,20 +63,29 @@ const note = document.getElementById("input-note")
         age.value = ""
         note.value = ""
 }
-document.querySelector("#ajouter").addEventListener("click", ajouter)
 
-// function modifiernote(id, note){
-//     let modifiernote = etudients.find(etudiant => etudiant.id === id)
-//     if(modifiernote){
-//         etudients.note = note
-//     }
-//     afichier()
+function rechercher(){
 
-// }
+    const chercherEtudient = document.querySelector("#input-chercher")
+    let etud = etudiants.find(etud => etud.id === Number(chercherEtudient.value))
+    
+    document.querySelector("#afichagee").innerHTML = ``
+    document.querySelector("#afichagee").innerHTML = `
+
+        <p> Nom : ${etud.nom} ||| Age : ${etud.age} ||| Note : ${etud.note}
+        </p>
+        `
+    afichier()
+    chercherEtudient.value = ""
+
+}
+document.querySelector("#chercher").addEventListener("click", rechercher)
+
 function supprimer(id){
     etudiants = etudiants.filter(etudient => etudient.id !== id)
     afichier()
 }
+
 
 document.querySelector("#etudient").addEventListener("click", (event)=>{
     const bouton = event.target.closest(`button`)
@@ -85,11 +94,6 @@ document.querySelector("#etudient").addEventListener("click", (event)=>{
     console.log(bouton)
     supprimer(Number(bouton.id))
 })
-
-
-function rechercher(nom) {
-    
-}
-
-
 document.querySelector("#aficher").addEventListener("click", afichier)
+
+document.querySelector("#ajouter").addEventListener("click", ajouter)
