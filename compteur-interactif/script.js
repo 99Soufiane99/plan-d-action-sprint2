@@ -11,18 +11,18 @@ else{augmenter.style.color = "black";}
 augmenter.addEventListener("click", event =>{
     conter++;
     checkcolor()
-   conteur.innerHTML = `${conter}`
+   conteur.textContent = conter;
 })
 
 diminuer.addEventListener("click", event =>{
     if(conter <= 0) return;
     conter--;
     checkcolor()
-    conteur.innerHTML = `${conter}`
+    conteur.textContent = conter;
 })
 
 renitialiser.addEventListener("click", event =>{
     conter = 0;
     checkcolor()
-    conteur.innerHTML = `${conter}`
+    conteur.textContent = conter;
 })
